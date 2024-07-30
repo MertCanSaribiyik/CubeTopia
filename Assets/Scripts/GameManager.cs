@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreTxt;
     private int tempScore;
 
-    public bool GameIsPaused { get; private set; }
+    public bool GameIsPaused { get; set; }
 
     [SerializeField] private float delay = 1.5f;
 

@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chromatic Cubes/Chromatic Cubes.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Dodge The Blocks/Dodge The Blocks Opening Scene.unity
+    guid: 11a7c8011b87cd34dbb37f788d6031a7
+  - enabled: 1
+    path: Assets/Scenes/Dodge The Blocks/Dodge The Blocks.unity
+    guid: 3ddfdec4a7424c641be5192d287d513f
   m_configObjects: {}

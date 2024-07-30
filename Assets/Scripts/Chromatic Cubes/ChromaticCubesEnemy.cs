@@ -25,8 +25,8 @@ public class ChromaticCubesEnemy : MonoBehaviour, IInteraction
         else {
             CreateExplosionEffect(player.transform.position);
 
-            if(playerInfo.score > PlayerPrefs.GetInt("ChromaticCubesHighscore", 0)) {
-                PlayerPrefs.SetInt("ChromaticCubesHighscore", playerInfo.score);
+            if(playerInfo.score > PlayerPrefs.GetInt("chromaticCubesHighscore", 0)) {
+                PlayerPrefs.SetInt("chromaticCubesHighscore", playerInfo.score);
             }
 
             Destroy(player);

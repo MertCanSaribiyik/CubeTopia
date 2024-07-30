@@ -1136,7 +1136,7 @@ GameObject:
   - component: {fileID: 1096315242}
   - component: {fileID: 1096315241}
   - component: {fileID: 1096315240}
-  - component: {fileID: 1096315243}
+  - component: {fileID: 1096315245}
   - component: {fileID: 1096315244}
   m_Layer: 0
   m_Name: Player
@@ -1301,18 +1301,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4609375, y: 1.4882812}
   m_EdgeRadius: 0
---- !u!114 &1096315243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1096315237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed8cfcacc1d10a048a1bbe54a828ff6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1096315244
 Animator:
   serializedVersion: 5
@@ -1334,6 +1322,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1096315245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096315237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8cfcacc1d10a048a1bbe54a828ff6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1174307967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,6 +1764,7 @@ MonoBehaviour:
   playerInfo: {fileID: 11400000, guid: cd2eba0fa67b61e449067dc37a2d4fd2, type: 2}
   PausePanel: {fileID: 455931449}
   scoreTxt: {fileID: 2105432205}
+  delay: 1.5
 --- !u!4 &1474734072
 Transform:
   m_ObjectHideFlags: 0
