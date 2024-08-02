@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dodge The Blocks/Dodge The Blocks.unity
     guid: 3ddfdec4a7424c641be5192d287d513f
+  - enabled: 1
+    path: Assets/Scenes/Jumper Cube/Jumper Cube Opening Scene.unity
+    guid: 8dbca767acb8479428d498b197339fd0
+  - enabled: 1
+    path: Assets/Scenes/Jumper Cube/Jumper Cube.unity
+    guid: 60f4f03c40285e2499f5c0fd61a42822
   m_configObjects: {}

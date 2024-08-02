@@ -1,7 +1,9 @@
 using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,7 +11,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private PlayerInfo playerInfo;
 
-    [SerializeField] private GameObject PausePanel;
+    [SerializeField] private Button pauseButton;
+    [SerializeField] private GameObject pausePanel;
+
     [SerializeField] private TextMeshProUGUI scoreTxt;
     private int tempScore;
 
@@ -29,7 +33,7 @@ public class GameManager : MonoBehaviour
         scoreTxt.text = playerInfo.score.ToString();
         tempScore = playerInfo.score;
 
-        PausePanel.SetActive(false);
+        pausePanel.SetActive(false);
 
         GameIsPaused = false;
     }
@@ -44,22 +48,36 @@ public class GameManager : MonoBehaviour
     public void PauseButton() {
         GameIsPaused = true;
         Time.timeScale = 0f;
-        PausePanel.SetActive(true);
+        pausePanel.SetActive(true);
     }
 
     public void ContinueButton() {
         GameIsPaused = false;
         Time.timeScale = 1f;
-        PausePanel.SetActive(false);
+        pausePanel.SetActive(false);
     }
 
     public void BackToButton() {
         Time.timeScale = 1f;
+        playerInfo.score = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public async void RestartGame() {
+        pauseButton.interactable = false;   
         await UniTask.Delay((int)(delay * 1000f));
-        BackToButton();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    //True if the touch is on the UI element, false otherwise 
+    public bool IsPointerOverUIObject(Touch touch) {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current) {
+            position = new Vector2(touch.position.x, touch.position.y)
+        };
+
+        var results = new System.Collections.Generic.List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
     }
 }

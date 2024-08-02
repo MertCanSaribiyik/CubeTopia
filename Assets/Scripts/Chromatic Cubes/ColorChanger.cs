@@ -20,24 +20,13 @@ public class ColorChanger : MonoBehaviour
         if(Input.touchCount > 0 && !GameManager.Instance.GameIsPaused) {
             Touch touch = Input.GetTouch(0);
 
-            if (touch.phase == TouchPhase.Began && !IsPointerOverUIObject(touch)) {
+            if (touch.phase == TouchPhase.Began && !GameManager.Instance.IsPointerOverUIObject(touch)) {
                 animator.SetTrigger("change");
                 spriteRenderer.color = colors[index];
                 index = (index == colors.Length - 1) ? 0 : index + 1;
             }
 
         }
-    }
-
-    //True if the touch is on the UI element, false otherwise 
-    private bool IsPointerOverUIObject(Touch touch) {
-        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current) {
-            position = new Vector2(touch.position.x, touch.position.y)
-        };
-
-        var results = new System.Collections.Generic.List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-        return results.Count > 0;
     }
 
 }

@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1059.8114, y: -594.1437}
-  m_SizeDelta: {x: 700, y: 160}
+  m_AnchoredPosition: {x: 1059.8114, y: -609.1437}
+  m_SizeDelta: {x: 700, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &13041450
 MonoBehaviour:
@@ -932,7 +932,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.4, z: 0}
-  m_LocalScale: {x: 2.25, y: 0.4, z: 1}
+  m_LocalScale: {x: 2.5, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1460,7 +1460,7 @@ MonoBehaviour:
   - {fileID: 2048949560}
   blockPrefab: {fileID: 5545903617136033912, guid: e34a5e85845f6874fa777c409130a459, type: 3}
   giftScoreBlockPrefab: {fileID: 8244614125166512473, guid: 9d1ed48475ae37f4a8db0b8416d447bf, type: 3}
-  startSpawnTime: 1.7
+  startSpawnTime: 2
 --- !u!4 &1480946567
 Transform:
   m_ObjectHideFlags: 0
@@ -1510,7 +1510,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInfo: {fileID: 11400000, guid: a24892429d8191741acd98940f9a2c42, type: 2}
-  PausePanel: {fileID: 1101120487}
+  pauseButton: {fileID: 491630775}
+  pausePanel: {fileID: 1101120487}
   scoreTxt: {fileID: 99413692}
   delay: 0.5
 --- !u!4 &1704281674
@@ -1695,7 +1696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficultyRate: 100
-  maxDifficulty: 1.4
+  maxDifficulty: 1.5
 --- !u!4 &1918430418
 Transform:
   m_ObjectHideFlags: 0
@@ -1831,8 +1832,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1059.8114, y: -384.1437}
-  m_SizeDelta: {x: 700, y: 160}
+  m_AnchoredPosition: {x: 1059.8114, y: -369.1437}
+  m_SizeDelta: {x: 700, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2007562130
 MonoBehaviour:
@@ -2120,9 +2121,9 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 2105784281}
   - {fileID: 726589879}
   - {fileID: 1228228384}
-  - {fileID: 2105784281}
   - {fileID: 1814457291}
   - {fileID: 1704281674}
   - {fileID: 1918430418}

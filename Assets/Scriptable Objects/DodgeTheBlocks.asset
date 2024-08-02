@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: DodgeTheBlocks
   m_EditorClassIdentifier: 
   score: 0
+  firstTimeGameOpening: 1

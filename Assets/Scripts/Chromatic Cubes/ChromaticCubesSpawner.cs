@@ -7,6 +7,11 @@ public class ChromaticCubesSpawner : MonoBehaviour
     private float spawnTime;
     [SerializeField] private float startingSpawnTime = 1f;
 
+    private int previousIndex;
+
+    private void Awake() {
+        previousIndex = -1;
+    }
 
     private void Update() {
         if (!GameManager.Instance.GameIsPaused) {
@@ -22,7 +27,17 @@ public class ChromaticCubesSpawner : MonoBehaviour
     }
 
     public void Create() {
-        int randIndex = Random.Range(0, enemyPrefabs.Length);
-        Instantiate(enemyPrefabs[randIndex], transform.position, Quaternion.identity);
+        int randIndex;
+
+        //So that we don't get the same enemy in a row :
+        while (true) {
+            randIndex = Random.Range(0, enemyPrefabs.Length);
+            if (randIndex != previousIndex) {
+                Instantiate(enemyPrefabs[randIndex], transform.position, Quaternion.identity);
+                break;
+            }
+        }
+
+        previousIndex = randIndex;
     }
 }
