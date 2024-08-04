@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InteractiveObjects
   - GivesScore
+  - Ground
   layers:
   - Default
   - TransparentFX

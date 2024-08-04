@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7179619059640266349}
   - component: {fileID: 8448898462629609558}
   - component: {fileID: 863458353103777461}
+  - component: {fileID: -4186726865539097564}
   m_Layer: 0
   m_Name: Block
   m_TagString: InteractiveObjects
@@ -172,4 +173,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInfo: {fileID: 11400000, guid: a24892429d8191741acd98940f9a2c42, type: 2}
-  timeScaleValue: 0.25
+  slowMotionValue: 0.25
+--- !u!114 &-4186726865539097564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545903617136033912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571bf7e59433de642ba0d93336c7ac0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 5

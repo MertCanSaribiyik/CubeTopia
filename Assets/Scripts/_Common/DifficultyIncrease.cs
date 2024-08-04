@@ -15,7 +15,6 @@ public class DifficultyIncrease : MonoBehaviour
         if(Time.timeScale <= maxDifficulty && !GameManager.Instance.GameIsPaused) {
             tempTimeScale += Time.deltaTime / difficultyRate;
             Time.timeScale = tempTimeScale;
-            print(Time.timeScale);
         }   
     }
 }

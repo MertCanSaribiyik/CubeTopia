@@ -760,7 +760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficultyRate: 200
-  maxDifficulty: 1.75
+  maxDifficulty: 2
 --- !u!4 &438069897
 Transform:
   m_ObjectHideFlags: 0
@@ -1135,9 +1135,9 @@ GameObject:
   - component: {fileID: 1096315238}
   - component: {fileID: 1096315242}
   - component: {fileID: 1096315241}
+  - component: {fileID: 1096315244}
   - component: {fileID: 1096315240}
   - component: {fileID: 1096315245}
-  - component: {fileID: 1096315244}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1288,7 +1288,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.01142478, y: -0.0005604625}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1299,7 +1299,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4609375, y: 1.4882812}
+  m_Size: {x: 1.2492471, y: 1.2476307}
   m_EdgeRadius: 0
 --- !u!95 &1096315244
 Animator:

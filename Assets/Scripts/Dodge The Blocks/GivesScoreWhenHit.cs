@@ -6,5 +6,6 @@ public class GivesScoreWhenHit : MonoBehaviour, IInteraction
 
     public void Interact() {
         playerInfo.score++;
+        Destroy(gameObject);
     }
 }

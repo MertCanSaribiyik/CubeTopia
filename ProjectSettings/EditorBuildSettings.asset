@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jumper Cube/Jumper Cube.unity
     guid: 60f4f03c40285e2499f5c0fd61a42822
+  - enabled: 1
+    path: Assets/Scenes/Endless Runner/Endless Runner Opening Scene.unity
+    guid: 892499f2f58893146a7ceb6abed495e4
+  - enabled: 1
+    path: Assets/Scenes/Endless Runner/Endless Runner.unity
+    guid: a952db82a4ff6e7419f6c24b9fe18ad2
   m_configObjects: {}

@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
             tempScore = playerInfo.score;
             scoreTxt.text = playerInfo.score.ToString();
         }
+
+        print(Time.timeScale);
     }
 
     public void PauseButton() {
@@ -64,8 +66,9 @@ public class GameManager : MonoBehaviour
     }
 
     public async void RestartGame() {
-        pauseButton.interactable = false;   
-        await UniTask.Delay((int)(delay * 1000f));
+        GameIsPaused = true;
+        pauseButton.interactable = false;
+        await UniTask.Delay((int)(Time.timeScale * delay * 1000f));
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }

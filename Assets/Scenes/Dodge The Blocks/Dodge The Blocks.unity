@@ -1513,7 +1513,7 @@ MonoBehaviour:
   pauseButton: {fileID: 491630775}
   pausePanel: {fileID: 1101120487}
   scoreTxt: {fileID: 99413692}
-  delay: 0.5
+  delay: 1
 --- !u!4 &1704281674
 Transform:
   m_ObjectHideFlags: 0
