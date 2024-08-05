@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EndlessRunnerDestroyObject : MonoBehaviour
+public class DestroyObject : MonoBehaviour
 {
     [SerializeField] private float destroyTime = 5f;
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DestroyBlock : MonoBehaviour
+public class DestroyIfOutOfCamera : MonoBehaviour
 {
     private void OnBecameInvisible() {
         Destroy(gameObject);

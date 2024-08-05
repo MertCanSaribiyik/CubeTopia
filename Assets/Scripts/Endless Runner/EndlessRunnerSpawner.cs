@@ -6,6 +6,7 @@ public class EndlessRunnerSpawner : MonoBehaviour
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private GameObject coinPrefab;
     [SerializeField] private Transform firstPoint, lastPoint;
+    [SerializeField] private float firstPointRange = .5f;
 
     private float spawnTime;
     [SerializeField] private float startSpawnTime = 1.5f;
@@ -17,8 +18,8 @@ public class EndlessRunnerSpawner : MonoBehaviour
 
     private void Update() {
         if(spawnTime <= 0f) {
-            int randIndex = Random.Range(0, enemyPrefabs.Length);
-            Create(enemyPrefabs[randIndex]).Forget();
+
+            CreateEnemy();
             spawnTime = startSpawnTime;
         }
 
@@ -27,19 +28,34 @@ public class EndlessRunnerSpawner : MonoBehaviour
         }
     }
 
-    private async UniTaskVoid Create(GameObject enemyPrefab) {
-        Vector2 randEnemyPos = new Vector2(transform.position.x, Random.Range(lastPoint.position.y, firstPoint.position.y));
-        Instantiate(enemyPrefab, randEnemyPos, Quaternion.identity);
+    private void CreateEnemy() {
+        int randIndex = Random.Range(0, enemyPrefabs.Length);
+        Vector2 randEnemyPos;
+        float yPos;
 
-        int coin = Random.Range(0, 2);
-
-        if(coin == 1) {
-            float coinDelay = Random.Range(minCoinDelay, maxCoinDelay);
-            await UniTask.Delay((int)(coinDelay * 1000));
-
-            Vector2 randCoinPos = new Vector2(transform.position.x, Random.Range(lastPoint.position.y, firstPoint.position.y + 1f));
-            Instantiate(coinPrefab, randCoinPos, Quaternion.identity);
+        if (randIndex == 0) {
+            yPos = Random.Range(lastPoint.position.y, firstPoint.position.y);
+            randEnemyPos = new Vector2(transform.position.x, yPos);
         }
 
+        else {
+            yPos = Random.Range(lastPoint.position.y, firstPoint.position.y + firstPointRange);
+            randEnemyPos = new Vector2(transform.position.x, yPos);
+        }
+
+        Instantiate(enemyPrefabs[randIndex], randEnemyPos, Quaternion.identity);
+        CreateCoin().Forget();
+    }
+
+    private async UniTaskVoid CreateCoin() {
+        int coin = Random.Range(0, 2);
+
+        if (coin == 1) {
+            float coinDelay = Random.Range(minCoinDelay, maxCoinDelay);
+            await UniTask.Delay((int)(coinDelay * 1000));
+            float yPos = Random.Range(lastPoint.position.y, firstPoint.position.y + firstPointRange * 2);
+            Vector2 randCoinPos = new Vector2(transform.position.x, yPos);
+            Instantiate(coinPrefab, randCoinPos, Quaternion.identity);
+        }
     }
 }

@@ -23,15 +23,16 @@ public class OpeningSceneManager : MonoBehaviour
             PlayerPrefs.SetInt(miniGameName, 1);
             howToPlayPanel.SetActive(true);
         }
+
     }
 
     public void StartButton() {
-        playerInfo.score = 0;
+        SetPlayerInfo();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void MainMenuButton() {
-        playerInfo.score = 0;
+        SetPlayerInfo();
         SceneManager.LoadScene(0);
     }
 
@@ -41,5 +42,10 @@ public class OpeningSceneManager : MonoBehaviour
 
     public void BackButton() {
         howToPlayPanel.SetActive(false);
+    }
+
+    private void SetPlayerInfo() {
+        playerInfo.score = 0;
+        playerInfo.healh = 100;
     }
 }

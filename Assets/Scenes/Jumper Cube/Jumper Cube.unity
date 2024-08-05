@@ -1201,8 +1201,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 525833048}
-  - component: {fileID: 525833047}
   - component: {fileID: 525833049}
+  - component: {fileID: 525833051}
+  - component: {fileID: 525833050}
   m_Layer: 0
   m_Name: Following Camera
   m_TagString: Untagged
@@ -1210,23 +1211,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &525833047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525833046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92aaf870287a4b54497c5eaece553f70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInfo: {fileID: 11400000, guid: cbf0a671f07b79f48b55d0f6a2e3dcdd, type: 2}
-  player: {fileID: 410436773}
-  t: 3.5
-  cameraShakeStartScore: 50
-  flashEffectPrefab: {fileID: 7976499437440671605, guid: 41c50caa748768944b1ba48b5adeb22c, type: 3}
 --- !u!4 &525833048
 Transform:
   m_ObjectHideFlags: 0
@@ -1265,6 +1249,39 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &525833050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525833046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaa55fd9700bd044fa0facca8d74c27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInfo: {fileID: 11400000, guid: cbf0a671f07b79f48b55d0f6a2e3dcdd, type: 2}
+  cameraShakeStartScore: 50
+  flashEffectPrefab: {fileID: 7976499437440671605, guid: 41c50caa748768944b1ba48b5adeb22c, type: 3}
+--- !u!114 &525833051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525833046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a84f3d02e34bd9d458118ba72b13f40e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 410436773}
+  followIntervalX: 0
+  followIntervalY: 0
+  xAxis: 0
+  yAxis: 1
+  t: 5
 --- !u!1 &627661774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2327,8 +2344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 284d72307e6f29747bde2ff8c0bb6b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficultyRate: 450
-  maxDifficulty: 2
+  difficultyRate: 350
+  maxDifficulty: 3
 --- !u!4 &1418351190
 Transform:
   m_ObjectHideFlags: 0

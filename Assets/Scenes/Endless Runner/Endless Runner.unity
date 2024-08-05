@@ -146,8 +146,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292358531}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.7648926, y: -0.78286994, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -550,7 +550,7 @@ Transform:
   m_GameObject: {fileID: 706690269}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.03, y: 0, z: 0}
+  m_LocalPosition: {x: 17, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -577,8 +577,9 @@ MonoBehaviour:
   coinPrefab: {fileID: 6104856715028978821, guid: c43da98cdab50e24ea1cab70af9e84f8, type: 3}
   firstPoint: {fileID: 1718736843}
   lastPoint: {fileID: 1321973192}
+  firstPointRange: 0.5
   startSpawnTime: 2
-  minCoinDelay: 0.2
+  minCoinDelay: 0.25
   maxCoinDelay: 0.8
 --- !u!1 &794750695
 GameObject:
@@ -1471,7 +1472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1422409654}
-  - component: {fileID: 1422409653}
+  - component: {fileID: 1422409655}
   m_Layer: 0
   m_Name: Following Camera
   m_TagString: Untagged
@@ -1479,20 +1480,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1422409653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422409652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05bef52bb7f3d5c4e9557dd6a359a845, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1377528848}
-  followUpInterval: 3.5
 --- !u!4 &1422409654
 Transform:
   m_ObjectHideFlags: 0
@@ -1511,6 +1498,24 @@ Transform:
   - {fileID: 706690270}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1422409655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422409652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a84f3d02e34bd9d458118ba72b13f40e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1377528848}
+  followIntervalX: 3.5
+  followIntervalY: 0
+  xAxis: 1
+  yAxis: 0
+  t: 100
 --- !u!1 &1454013097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,7 +1594,7 @@ Transform:
   m_GameObject: {fileID: 1454013097}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.794893, y: 0.7828699, z: 0.13489276}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1755,7 +1760,7 @@ Transform:
   m_GameObject: {fileID: 1658641067}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.794893, y: 0.7828699, z: 0.13489276}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 0.55, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1840,7 +1845,7 @@ Transform:
   m_GameObject: {fileID: 1718736842}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.65, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1912,12 +1917,13 @@ MonoBehaviour:
   colors:
   - {r: 0.8352941, g: 0.5882353, b: 0.23921569, a: 1}
   - {r: 0.8431373, g: 0.20784315, b: 0.23137257, a: 1}
-  - {r: 0.79607844, g: 0, b: 0.42352942, a: 1}
+  - {r: 0.9098039, g: 0.2627451, b: 0.5764706, a: 1}
   - {r: 0.5568628, g: 0.26666668, b: 0.6784314, a: 1}
   - {r: 0.20392157, g: 0.59607846, b: 0.85882354, a: 1}
   - {r: 0.15294118, g: 0.68235296, b: 0.3764706, a: 1}
   - {r: 0.08627451, g: 0.627451, b: 0.52156866, a: 1}
   - {r: 0.3306728, g: 0.37854394, b: 0.4264151, a: 1}
+  - {r: 0.6683303, g: 0.73197275, b: 0.7584905, a: 1}
   playerInfo: {fileID: 11400000, guid: de7a20c169fa36c4793d89e8fb7dfad2, type: 2}
   colorChangeStartScore: 2
 --- !u!1 &1775509795

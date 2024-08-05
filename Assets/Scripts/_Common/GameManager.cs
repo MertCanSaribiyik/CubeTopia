@@ -43,8 +43,6 @@ public class GameManager : MonoBehaviour
             tempScore = playerInfo.score;
             scoreTxt.text = playerInfo.score.ToString();
         }
-
-        print(Time.timeScale);
     }
 
     public void PauseButton() {

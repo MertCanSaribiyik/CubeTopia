@@ -801,11 +801,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 486518369}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1440025935}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: GameButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &486518369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2515,7 +2527,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Coming Soon
+  m_text: Top-Down Shooter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbd61547c530c2741b5dfdc68e61f1fb, type: 2}
   m_sharedMaterial: {fileID: 4950705726802308718, guid: dbd61547c530c2741b5dfdc68e61f1fb, type: 2}
