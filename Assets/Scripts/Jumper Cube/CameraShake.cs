@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-    [SerializeField] private PlayerInfo playerInfo;
-
     private Animator cameraAnimator;
     [SerializeField] private int cameraShakeStartScore = 50;
     private int coefficient;
@@ -16,9 +14,10 @@ public class CameraShake : MonoBehaviour
     }
 
     private void Update() {
-        if (playerInfo.score >= cameraShakeStartScore * coefficient) {
+        if (GameManager.Instance.playerInfo.score >= cameraShakeStartScore * coefficient) {
             coefficient++;
             cameraAnimator.SetTrigger("shake2");
+            AudioManager.Instance.PlayOneShot("slowMotion");
             Instantiate(flashEffectPrefab, transform.position, Quaternion.identity);
         }
     }

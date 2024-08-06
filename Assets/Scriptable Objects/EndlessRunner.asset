@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: EndlessRunner
   m_EditorClassIdentifier: 
   score: 0
+  health: 100
   backgroundColor: {r: 0.3306728, g: 0.37854394, b: 0.4264151, a: 1}

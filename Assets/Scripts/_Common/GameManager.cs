@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    [SerializeField] private PlayerInfo playerInfo;
+    public PlayerInfo playerInfo;
 
     [SerializeField] private Button pauseButton;
     [SerializeField] private GameObject pausePanel;
@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public bool GameIsPaused { get; set; }
 
     [SerializeField] private float delay = 1.5f;
+
+    [SerializeField] private AudioClip buttonClip;
 
     private void Awake() {
         if(Instance != null && Instance != this) {
@@ -46,18 +48,21 @@ public class GameManager : MonoBehaviour
     }
 
     public void PauseButton() {
+        ClickButtonSound();
         GameIsPaused = true;
         Time.timeScale = 0f;
         pausePanel.SetActive(true);
     }
 
     public void ContinueButton() {
+        ClickButtonSound();
         GameIsPaused = false;
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
     }
 
     public void BackToButton() {
+        ClickButtonSound();
         Time.timeScale = 1f;
         playerInfo.score = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
@@ -80,5 +85,9 @@ public class GameManager : MonoBehaviour
         var results = new System.Collections.Generic.List<RaycastResult>();
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
         return results.Count > 0;
+    }
+
+    private void ClickButtonSound() {
+        AudioManager.Instance.PlayOneShot(buttonClip);
     }
 }

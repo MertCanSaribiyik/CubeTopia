@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class JumperCubePlayerDeath : MonoBehaviour
 {
-    [SerializeField] private PlayerInfo playerInfo;
     [SerializeField] private Button pauseButton;
     private bool playerIsDeath;
 
@@ -18,8 +17,8 @@ public class JumperCubePlayerDeath : MonoBehaviour
     private void Update() {
         if(rb.velocity.y <= -deathValue && !playerIsDeath) {
             playerIsDeath = true;
-            if (playerInfo.score > PlayerPrefs.GetInt("jumperCubeHighscore", 0)) {
-                PlayerPrefs.SetInt("jumperCubeHighscore", playerInfo.score);
+            if (GameManager.Instance.playerInfo.score > PlayerPrefs.GetInt("jumperCubeHighscore", 0)) {
+                PlayerPrefs.SetInt("jumperCubeHighscore", GameManager.Instance.playerInfo.score);
             }
             GameManager.Instance.RestartGame();
         }

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class ColorChanger : MonoBehaviour
 {
@@ -21,6 +20,7 @@ public class ColorChanger : MonoBehaviour
             Touch touch = Input.GetTouch(0);
 
             if (touch.phase == TouchPhase.Began && !GameManager.Instance.IsPointerOverUIObject(touch)) {
+                AudioManager.Instance.PlayOneShot("change");
                 animator.SetTrigger("change");
                 spriteRenderer.color = colors[index];
                 index = (index == colors.Length - 1) ? 0 : index + 1;

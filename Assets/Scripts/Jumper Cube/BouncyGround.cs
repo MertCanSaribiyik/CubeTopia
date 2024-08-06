@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class BouncyGround : MonoBehaviour, IInteraction
 {
-    [SerializeField] private PlayerInfo playerInfo;
     [SerializeField] private int scoreGiven = 1;
-    private bool value;
+    private bool didCollidePlayer;
 
     private Rigidbody2D playerRb;
     [SerializeField] private float jumpForce = 16.5f;
@@ -16,7 +15,7 @@ public class BouncyGround : MonoBehaviour, IInteraction
         playerRb = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        value = false;
+        didCollidePlayer = false;
     }
 
     private void Update() {
@@ -29,10 +28,11 @@ public class BouncyGround : MonoBehaviour, IInteraction
         if (playerRb.velocity.y < .1f) {
             animator.SetTrigger("destroy");
             playerRb.velocity = new Vector2(playerRb.velocity.x, jumpForce);
+            AudioManager.Instance.PlayOneShot("bouncing");
 
-            if (!value) {
-                playerInfo.score += scoreGiven;
-                value = true;
+            if (!didCollidePlayer) {
+                GameManager.Instance.playerInfo.score += scoreGiven;
+                didCollidePlayer = true;
             }
         }
     }

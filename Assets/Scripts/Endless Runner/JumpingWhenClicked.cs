@@ -30,6 +30,7 @@ public class JumpingWhenClicked : MonoBehaviour
 
     private void FixedUpdate() {
         if(jumping) {
+            AudioManager.Instance.PlayOneShot("jumping");
             rb.velocity = new Vector2 (rb.velocity.x, jumpForce);
             jumpCount++;
             jumping = false;

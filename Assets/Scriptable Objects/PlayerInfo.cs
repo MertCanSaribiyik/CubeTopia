@@ -4,6 +4,6 @@ using UnityEngine;
 public class PlayerInfo : ScriptableObject
 {
     public int score = 0;
-    public float healh = 100;
+    public float health = 100;
     public Color backgroundColor = Color.white;
 }

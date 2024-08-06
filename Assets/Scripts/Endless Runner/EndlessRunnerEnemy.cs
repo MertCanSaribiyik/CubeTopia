@@ -5,8 +5,6 @@ public class EndlessRunnerEnemy : MonoBehaviour, IInteraction
     private GameObject player;
     [SerializeField] private GameObject explosionParticlePrefab, explosionEffectPrefab;
 
-    [SerializeField] private PlayerInfo playerInfo;
-
     private void Awake() {
         player = GameObject.FindWithTag("Player");
     }
@@ -16,11 +14,12 @@ public class EndlessRunnerEnemy : MonoBehaviour, IInteraction
         Instantiate(explosionEffectPrefab, player.transform.position, Quaternion.identity);
         Camera.main.GetComponent<Animator>().SetTrigger("shake1");
 
-        if(playerInfo.score > PlayerPrefs.GetInt("endlessRunnerHighscore", 0)) {
-            PlayerPrefs.SetInt("endlessRunnerHighscore", playerInfo.score);
+        if(GameManager.Instance.playerInfo.score > PlayerPrefs.GetInt("endlessRunnerHighscore", 0)) {
+            PlayerPrefs.SetInt("endlessRunnerHighscore", GameManager.Instance.playerInfo.score);
         }
 
-        GameManager.Instance.RestartGame();
+        AudioManager.Instance.PlayOneShot("playerExplosion");
         player.SetActive(false);
+        GameManager.Instance.RestartGame();
     }
 }

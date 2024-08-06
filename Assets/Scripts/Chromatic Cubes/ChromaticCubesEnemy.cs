@@ -3,7 +3,6 @@ using UnityEngine;
 public class ChromaticCubesEnemy : MonoBehaviour, IInteraction
 {
     private GameObject player;
-    [SerializeField] private PlayerInfo playerInfo;
 
     [SerializeField] private GameObject explosionParticlePrefab, explosionEffectPrefab;
 
@@ -18,17 +17,19 @@ public class ChromaticCubesEnemy : MonoBehaviour, IInteraction
 
             Camera.main.GetComponent<Animator>().SetTrigger("shake1");
 
+            AudioManager.Instance.PlayOneShot("explosion");
             Destroy(gameObject);
-            playerInfo.score++;
+            GameManager.Instance.playerInfo.score++;
         }
 
         else {
             CreateExplosionEffect(player.transform.position);
 
-            if(playerInfo.score > PlayerPrefs.GetInt("chromaticCubesHighscore", 0)) {
-                PlayerPrefs.SetInt("chromaticCubesHighscore", playerInfo.score);
+            if(GameManager.Instance.playerInfo.score > PlayerPrefs.GetInt("chromaticCubesHighscore", 0)) {
+                PlayerPrefs.SetInt("chromaticCubesHighscore", GameManager.Instance.playerInfo.score);
             }
 
+            AudioManager.Instance.PlayOneShot("playerExplosion");
             Destroy(player);
             GameManager.Instance.RestartGame();
         }

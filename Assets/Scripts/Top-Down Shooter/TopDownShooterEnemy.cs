@@ -3,7 +3,6 @@ using UnityEngine;
 public class TopDownShooterEnemy : MonoBehaviour, IInteraction
 {
     private GameObject player;
-    [SerializeField] private PlayerInfo playerInfo;
     [SerializeField] private int score = 1, health = 1;
     [SerializeField] private float damage = 5;
 
@@ -19,7 +18,7 @@ public class TopDownShooterEnemy : MonoBehaviour, IInteraction
 
     private void OnTriggerEnter2D(Collider2D collision) {
         //Destroy Enemy : 
-        if (collision.gameObject.CompareTag("Bullet")) {
+        if (collision.gameObject.CompareTag("Bullet") && GameManager.Instance.playerInfo.health > 0) {
             health--;
             healtTxt.text = health.ToString();
 
@@ -29,25 +28,27 @@ public class TopDownShooterEnemy : MonoBehaviour, IInteraction
                 CreateExplosionParticle(GetComponentInChildren<SpriteRenderer>().color, transform.position);
                 CreateExplosionEffect(transform.position);
 
-                playerInfo.score += score;
+                GameManager.Instance.playerInfo.score += score;
 
+                AudioManager.Instance.PlayOneShot("explosion");
                 Destroy(gameObject);
             }
         }
     }
 
     public void Interact() {
-        playerInfo.healh -= damage;
+        GameManager.Instance.playerInfo.health -= damage;
 
         CreateExplosionEffect(transform.position);
         Camera.main.GetComponent<Animator>().SetTrigger("shake1");
-        
+
+        AudioManager.Instance.PlayOneShot("playerExplosion");
         Destroy(gameObject);
 
-        if(playerInfo.healh <= 0f) {
+        if(GameManager.Instance.playerInfo.health <= 0f) {
 
-            if (playerInfo.score > PlayerPrefs.GetInt("topDownShooterHighscore", 0)) {
-                PlayerPrefs.SetInt("topDownShooterHighscore", playerInfo.score);
+            if (GameManager.Instance.playerInfo.score > PlayerPrefs.GetInt("topDownShooterHighscore", 0)) {
+                PlayerPrefs.SetInt("topDownShooterHighscore", GameManager.Instance.playerInfo.score);
             }
 
             CreateExplosionParticle(Color.white, player.transform.position);

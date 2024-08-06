@@ -156,6 +156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6440150706642171741}
   - component: {fileID: 9001751526095159892}
+  - component: {fileID: 8085013555806698480}
   m_Layer: 0
   m_Name: Flat Wall
   m_TagString: Untagged
@@ -192,3 +193,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 5
+--- !u!114 &8085013555806698480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8231642142088986373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0503ff4b8350adc42ad05f87ba1b2025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topPoint: {x: 0, y: 0.5}
+  bottomPoint: {x: 0, y: -1.8}

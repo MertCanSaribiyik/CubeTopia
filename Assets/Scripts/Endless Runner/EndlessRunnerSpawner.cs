@@ -5,8 +5,6 @@ public class EndlessRunnerSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private GameObject coinPrefab;
-    [SerializeField] private Transform firstPoint, lastPoint;
-    [SerializeField] private float firstPointRange = .5f;
 
     private float spawnTime;
     [SerializeField] private float startSpawnTime = 1.5f;
@@ -30,18 +28,7 @@ public class EndlessRunnerSpawner : MonoBehaviour
 
     private void CreateEnemy() {
         int randIndex = Random.Range(0, enemyPrefabs.Length);
-        Vector2 randEnemyPos;
-        float yPos;
-
-        if (randIndex == 0) {
-            yPos = Random.Range(lastPoint.position.y, firstPoint.position.y);
-            randEnemyPos = new Vector2(transform.position.x, yPos);
-        }
-
-        else {
-            yPos = Random.Range(lastPoint.position.y, firstPoint.position.y + firstPointRange);
-            randEnemyPos = new Vector2(transform.position.x, yPos);
-        }
+        Vector2 randEnemyPos = RandomPosition(enemyPrefabs[randIndex]);
 
         Instantiate(enemyPrefabs[randIndex], randEnemyPos, Quaternion.identity);
         CreateCoin().Forget();
@@ -53,9 +40,14 @@ public class EndlessRunnerSpawner : MonoBehaviour
         if (coin == 1) {
             float coinDelay = Random.Range(minCoinDelay, maxCoinDelay);
             await UniTask.Delay((int)(coinDelay * 1000));
-            float yPos = Random.Range(lastPoint.position.y, firstPoint.position.y + firstPointRange * 2);
-            Vector2 randCoinPos = new Vector2(transform.position.x, yPos);
+            Vector2 randCoinPos = RandomPosition(coinPrefab);
             Instantiate(coinPrefab, randCoinPos, Quaternion.identity);
         }
+    }
+
+    private Vector2 RandomPosition(GameObject obj) {
+        float topPointsY = transform.position.y + obj.GetComponent<PointsPrefabsOccur>().topPoint.y;
+        float botttomPointsY = transform.position.y + obj.GetComponent<PointsPrefabsOccur>().bottomPoint.y;
+        return new Vector2(transform.position.x, Random.Range(botttomPointsY, topPointsY));
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8699254414175897505}
   - component: {fileID: -3597391611362778802}
   - component: {fileID: 1236495140079597130}
+  - component: {fileID: 2041487689232917909}
   m_Layer: 0
   m_Name: Rotating Wall
   m_TagString: InteractiveObjects
@@ -112,6 +113,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 5
+--- !u!114 &2041487689232917909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360537537695047445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0503ff4b8350adc42ad05f87ba1b2025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topPoint: {x: 0, y: -1}
+  bottomPoint: {x: 0, y: -2.25}
 --- !u!1 &3754118575929709724
 GameObject:
   m_ObjectHideFlags: 0

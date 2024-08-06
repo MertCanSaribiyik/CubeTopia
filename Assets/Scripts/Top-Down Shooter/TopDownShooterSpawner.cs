@@ -13,7 +13,7 @@ public class TopDownShooterSpawner : MonoBehaviour
     [SerializeField] private float minTime, decreaseTime;
 
     private void Awake() {
-        spawnTime = 0f;
+        spawnTime = startSpawnTime;
     }
 
     private void Update() {

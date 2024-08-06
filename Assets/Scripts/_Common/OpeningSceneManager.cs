@@ -11,6 +11,8 @@ public class OpeningSceneManager : MonoBehaviour
 
     [SerializeField] private GameObject howToPlayPanel;
 
+    [SerializeField] private AudioClip buttonClip;
+
     private void Awake() {
         scoreTxt.text = $"Your Score : {playerInfo.score}";
         highscoreTxt.text = $"Best : {PlayerPrefs.GetInt($"{miniGameName}Highscore", 0)}";
@@ -23,29 +25,31 @@ public class OpeningSceneManager : MonoBehaviour
             PlayerPrefs.SetInt(miniGameName, 1);
             howToPlayPanel.SetActive(true);
         }
-
     }
 
     public void StartButton() {
+        ClickButtonSound();
         SetPlayerInfo();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void MainMenuButton() {
+        ClickButtonSound();
         SetPlayerInfo();
         SceneManager.LoadScene(0);
     }
 
     public void HowToPlayButton() {
+        ClickButtonSound();
         howToPlayPanel.SetActive(true);
-    }
-
-    public void BackButton() {
-        howToPlayPanel.SetActive(false);
     }
 
     private void SetPlayerInfo() {
         playerInfo.score = 0;
-        playerInfo.healh = 100;
+        playerInfo.health = 100;
+    }
+
+    private void ClickButtonSound() {
+        AudioManager.Instance.PlayOneShot(buttonClip);
     }
 }

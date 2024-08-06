@@ -8,12 +8,12 @@ public class HealthBar : MonoBehaviour
 
     private void Awake() {
         slider = GetComponent<Slider>();
-        slider.value = playerInfo.healh;
+        slider.value = playerInfo.health;
     }
 
     private void Update() {
-        if(slider.value != playerInfo.healh) {
-            slider.value = playerInfo.healh;
+        if(slider.value != playerInfo.health) {
+            slider.value = playerInfo.health;
         }
     }
 }
