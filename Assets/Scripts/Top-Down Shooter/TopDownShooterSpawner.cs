@@ -24,7 +24,7 @@ public class TopDownShooterSpawner : MonoBehaviour
             spawnTime = startSpawnTime;
 
             if(startSpawnTime >= minTime) {
-                startSpawnTime -= decreaseTime * Time.deltaTime ;
+                startSpawnTime -= decreaseTime;
             }
         }
 

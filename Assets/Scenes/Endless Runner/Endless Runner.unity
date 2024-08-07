@@ -2307,7 +2307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1588974211668338980, guid: d3f62b1b2485a83438a39796892840f2, type: 3}
       propertyPath: delay
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1588974211668338980, guid: d3f62b1b2485a83438a39796892840f2, type: 3}
       propertyPath: scoreTxt

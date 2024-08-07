@@ -2161,14 +2161,14 @@ PrefabInstance:
     - target: {fileID: 4257100112957694459, guid: 560a08da313815c498c9618e4a02ff58, type: 3}
       propertyPath: clips.Array.data[1].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 5c3dd7083da4ec34ab43784400acfc69, type: 3}
+      objectReference: {fileID: 8300000, guid: 877c1cea601d8ba4d9f1bbd8301a7285, type: 3}
     - target: {fileID: 4257100112957694459, guid: 560a08da313815c498c9618e4a02ff58, type: 3}
       propertyPath: clips.Array.data[0].clipName
       value: bouncing
       objectReference: {fileID: 0}
     - target: {fileID: 4257100112957694459, guid: 560a08da313815c498c9618e4a02ff58, type: 3}
       propertyPath: clips.Array.data[1].clipName
-      value: slowMotion
+      value: speedUp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

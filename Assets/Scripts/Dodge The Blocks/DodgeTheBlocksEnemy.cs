@@ -11,7 +11,7 @@ public class DodgeTheBlocksEnemy : MonoBehaviour, IInteraction
     }
 
     public void Interact() {
-        AudioManager.Instance.PlayOneShot("slowMotion");
+        AudioManager.Instance.PlayOneShot("slowDown");
         Destroy(playerInteract);
         GameManager.Instance.GameIsPaused = true;
         Time.timeScale = slowMotionValue;

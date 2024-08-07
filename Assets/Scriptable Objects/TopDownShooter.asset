@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TopDownShooter
   m_EditorClassIdentifier: 
   score: 0
-  healh: 100
-  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  health: 100
+  backgroundColor: {r: 0.3306728, g: 0.37854394, b: 0.4264151, a: 1}

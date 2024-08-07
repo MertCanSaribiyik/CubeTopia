@@ -17,7 +17,7 @@ public class CameraShake : MonoBehaviour
         if (GameManager.Instance.playerInfo.score >= cameraShakeStartScore * coefficient) {
             coefficient++;
             cameraAnimator.SetTrigger("shake2");
-            AudioManager.Instance.PlayOneShot("slowMotion");
+            AudioManager.Instance.PlayOneShot("speedUp");
             Instantiate(flashEffectPrefab, transform.position, Quaternion.identity);
         }
     }

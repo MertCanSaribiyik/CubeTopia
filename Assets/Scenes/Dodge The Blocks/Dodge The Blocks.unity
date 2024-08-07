@@ -1218,14 +1218,14 @@ PrefabInstance:
     - target: {fileID: 4257100112957694459, guid: 560a08da313815c498c9618e4a02ff58, type: 3}
       propertyPath: clips.Array.data[0].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 5c3dd7083da4ec34ab43784400acfc69, type: 3}
+      objectReference: {fileID: 8300000, guid: 455cecbf57db16349b68fd21ecd51404, type: 3}
     - target: {fileID: 4257100112957694459, guid: 560a08da313815c498c9618e4a02ff58, type: 3}
       propertyPath: clips.Array.data[1].clip
       value: 
       objectReference: {fileID: 8300000, guid: f041d3928a60f7340a03e1d8a81f950b, type: 3}
     - target: {fileID: 4257100112957694459, guid: 560a08da313815c498c9618e4a02ff58, type: 3}
       propertyPath: clips.Array.data[0].clipName
-      value: slowMotion
+      value: slowDown
       objectReference: {fileID: 0}
     - target: {fileID: 4257100112957694459, guid: 560a08da313815c498c9618e4a02ff58, type: 3}
       propertyPath: clips.Array.data[1].clipName
@@ -1433,7 +1433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1588974211668338980, guid: d3f62b1b2485a83438a39796892840f2, type: 3}
       propertyPath: delay
-      value: 1
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 1588974211668338980, guid: d3f62b1b2485a83438a39796892840f2, type: 3}
       propertyPath: scoreTxt
