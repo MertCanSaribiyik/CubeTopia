@@ -567,7 +567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460b85aed259da849ab45764c4bca57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInfo: {fileID: 11400000, guid: d32daafb7a118d44bab9ebfeee3c84ae, type: 2}
   score: 1
   health: 1
   damage: 5

@@ -3040,9 +3040,9 @@ MonoBehaviour:
   - {fileID: 1488043137}
   xDistance: 15
   yDistance: 9
-  startSpawnTime: 1.85
+  startSpawnTime: 2.1
   minTime: 1
-  decreaseTime: 0.01
+  decreaseTime: 0.02
 --- !u!4 &2140192304
 Transform:
   m_ObjectHideFlags: 0

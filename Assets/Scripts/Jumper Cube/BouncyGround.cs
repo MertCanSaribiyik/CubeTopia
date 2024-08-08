@@ -9,7 +9,7 @@ public class BouncyGround : MonoBehaviour, IInteraction
     [SerializeField] private float jumpForce = 16.5f;
 
     private Animator animator;
-    [SerializeField] private float destroyInterval = 10f;
+    [SerializeField] private float destroyInterval = 8f;
 
     private void Awake() {
         playerRb = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
@@ -22,6 +22,7 @@ public class BouncyGround : MonoBehaviour, IInteraction
         if(transform.position.y < Camera.main.transform.position.y - destroyInterval) {
             Destroy(gameObject);
         }
+        
     }
 
     public void Interact() {

@@ -2470,7 +2470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficultyRate: 350
-  maxDifficulty: 3
+  maxDifficulty: 3.25
 --- !u!4 &1418351190
 Transform:
   m_ObjectHideFlags: 0

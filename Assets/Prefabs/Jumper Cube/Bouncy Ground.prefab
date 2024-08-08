@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7009272933217233163}
   - component: {fileID: 129036763163446557}
   - component: {fileID: 8278255831887779333}
-  - component: {fileID: 5862894377739513934}
   - component: {fileID: 1359668120641714553}
+  - component: {fileID: 5862894377739513934}
   - component: {fileID: 4440219038447876841}
   m_Layer: 0
   m_Name: Bouncy Ground
@@ -154,22 +154,6 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &5862894377739513934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6475183840221960992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0300bdbf0d5469f438d59268d458d464, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInfo: {fileID: 11400000, guid: cbf0a671f07b79f48b55d0f6a2e3dcdd, type: 2}
-  scoreGiven: 1
-  jumpForce: 16.8
-  destroyInterval: 10
 --- !u!95 &1359668120641714553
 Animator:
   serializedVersion: 5
@@ -191,6 +175,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5862894377739513934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6475183840221960992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0300bdbf0d5469f438d59268d458d464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreGiven: 1
+  jumpForce: 16.8
+  destroyInterval: 8
 --- !u!114 &4440219038447876841
 MonoBehaviour:
   m_ObjectHideFlags: 0

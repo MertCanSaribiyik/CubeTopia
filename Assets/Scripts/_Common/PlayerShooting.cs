@@ -49,7 +49,7 @@ public class PlayerShooting : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         if (shootTime <= 0) {
             if(bulletCount > 0) {
                 AudioManager.Instance.PlayOneShot("shooting");
-                GameObject bullet = Instantiate(bulletPrefab, barrel.position, Quaternion.identity);
+                Instantiate(bulletPrefab, barrel.position, Quaternion.identity);
                 bulletCountTxt.text = (--bulletCount).ToString();
             }
 

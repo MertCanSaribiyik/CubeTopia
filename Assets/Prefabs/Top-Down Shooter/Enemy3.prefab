@@ -228,7 +228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460b85aed259da849ab45764c4bca57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInfo: {fileID: 11400000, guid: d32daafb7a118d44bab9ebfeee3c84ae, type: 2}
   score: 3
   health: 3
   damage: 15
@@ -246,8 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f686f89ea1ef5b458ea4cff63adbbe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 2.5
-  maxSpeed: 3.5
+  minSpeed: 2.25
+  maxSpeed: 3.25
 --- !u!1 &7178331289755368150
 GameObject:
   m_ObjectHideFlags: 0

@@ -94,8 +94,9 @@ GameObject:
   - component: {fileID: 3218835546585237312}
   - component: {fileID: -3363832991070986934}
   - component: {fileID: -5575769444870028779}
-  - component: {fileID: -2029246555740230814}
   - component: {fileID: 8279371401967129981}
+  - component: {fileID: -2029246555740230814}
+  - component: {fileID: 2777553154994713104}
   m_Layer: 0
   m_Name: Extra Bouncy Ground
   m_TagString: InteractiveObjects
@@ -235,22 +236,6 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &-2029246555740230814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5898070668703043844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0300bdbf0d5469f438d59268d458d464, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInfo: {fileID: 11400000, guid: cbf0a671f07b79f48b55d0f6a2e3dcdd, type: 2}
-  scoreGiven: 5
-  jumpForce: 27
-  destroyInterval: 10
 --- !u!95 &8279371401967129981
 Animator:
   serializedVersion: 5
@@ -272,3 +257,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-2029246555740230814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898070668703043844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0300bdbf0d5469f438d59268d458d464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreGiven: 5
+  jumpForce: 27
+  destroyInterval: 8
+--- !u!114 &2777553154994713104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898070668703043844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a095f0ca1344e53459b0f0d9503c749e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

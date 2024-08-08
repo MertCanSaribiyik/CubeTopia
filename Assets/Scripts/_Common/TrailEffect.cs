@@ -15,7 +15,7 @@ public class TrailEffect : MonoBehaviour
     private void Update() {
         if(rb.velocity.y != 0) {
             if (spawnTime <= 0f) {
-                GameObject trailEffect = Instantiate(trailEffectPrefab, transform.position, Quaternion.identity);
+                Instantiate(trailEffectPrefab, transform.position, Quaternion.identity);
                 spawnTime = spawnStartTime;
             }
 
